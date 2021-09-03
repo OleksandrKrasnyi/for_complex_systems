@@ -1,0 +1,552 @@
+                     J E S 2  J O B  L O G  --  S Y S T E M  E S 0 T  --  N O D E  E S T E S T                                       
+                                                                                                                                     
+19.50.46 J0003591 ---- WEDNESDAY, 28 MAR 2018 ----                                                                                   
+19.50.46 J0003591  IRR010I  USERID $SCSDU1  IS ASSIGNED TO THIS JOB.                                                                 
+19.50.46 J0003591  ICH70001I $SCSDU1  LAST ACCESS AT 19:50:35 ON WEDNESDAY, MARCH 28, 2018                                           
+19.50.46 J0003591  $HASP373 EUS1RBBU STARTED - WLM INIT  - SRVCLASS BATSTND  - SYS ES0T                                              
+19.50.46 J0003591  ETFR0130-090(I) F$RECALL,04,00,00,00A7,$SCSDU1 ,FACILITY                                                          
+19.50.46 J0003591  ETFR0130-090(I) F$RECALL,04,00,01,00A7,$SCSDU1 ,FACILITY                                                          
+19.50.46 J0003591  EKC.ETFR.ETFR0130-000(I) F$RECALL MODE ACTIVE FOR JOB NAME INIT    , USERID=$SCSDU1                               
+19.50.46 J0003591  IEF196I EKC.ETFR.ETFR0130-000(I) F$RECALL MODE ACTIVE FOR JOB NAME INIT                                           
+19.50.46 J0003591  IEF196I    , USERID=$SCSDU1                                                                                       
+19.50.46 J0003591  IEF403I EUS1RBBU - STARTED - TIME=19.50.46                                                                        
+19.50.46 J0003591  ETFR0130-090(I) F$RECALL,08,00,00,00A7,$SCSDU1 ,DATASET,SYS.PROD.VCR.LOAD                                         
+19.50.46 J0003591  ETFR0130-090(I) F$RECALL,08,00,00,00A7,$SCSDU1 ,DATASET,SYS.PROD.VCR.PARM                                         
+19.50.49 J0003591  -                                         --TIMINGS (MINS.)--            ----PAGING COUNTS---                     
+19.50.49 J0003591  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP    CPU    SRB  CLOCK   SERV  PG   PAGE   SWAP    VIO SWAPS STEPNO        
+19.50.49 J0003591  -EUS1RBBU          STEP2       08   4670    .00    .00    .03  16978   0      0      0      0     0     1         
+19.50.49 J0003591  IEF404I EUS1RBBU - ENDED - TIME=19.50.49                                                                          
+19.50.49 J0003591  -EUS1RBBU ENDED.  NAME-DB2 V11              TOTAL CPU TIME=   .00  TOTAL ELAPSED TIME=   .03                      
+19.50.49 J0003591  $HASP395 EUS1RBBU ENDED - RC=0008                                                                                 
+------ JES2 JOB STATISTICS ------                                                                                                    
+  28 MAR 2018 JOB EXECUTION DATE                                                                                                     
+           24 CARDS READ                                                                                                             
+          554 SYSOUT PRINT RECORDS                                                                                                   
+            0 SYSOUT PUNCH RECORDS                                                                                                   
+           35 SYSOUT SPOOL KBYTES                                                                                                    
+         0.03 MINUTES EXECUTION TIME                                                                                                 
+        1 //EUS1RBBU JOB (S571-DB2SYS),'DB2 V11',NOTIFY=&SYSUID,                  J0003591                                           
+          //       MSGCLASS=Q,TIME=1440,REGION=0M                                 00020000                                           
+          IEFC653I SUBSTITUTION JCL - (S571-DB2SYS),'DB2 V11',NOTIFY=$SCSDU1,MSGCLASS=Q,TIME=1440,REGION=0M                          
+        2 /*JOBPARM SYSAFF=ES0T                                                   00060001                                           
+          //****************************************************************      00070000                                           
+          //* JOB TO UPDATE DBD01                                                                                                    
+          //****************************************************************      00080000                                           
+        3 //STEP2   EXEC PGM=MVF00010                                             00090002                                           
+        4 //STEPLIB  DD  DISP=SHR,DSN=SYS.PROD.VCR.LOAD                           00100000                                           
+        5 //         DD  DISP=SHR,DSN=DB2SYS.EUS1.SSPGM                                                                              
+        6 //MVFINI   DD  DISP=SHR,DSN=SYS.PROD.VCR.PARM(MVFINI)                   00110002                                           
+        7 //MVFPRINT DD  SYSOUT=*                                                 00120002                                           
+          //********************************************************************* 00130000                                           
+          //* THE JOURNAL FILE MUST BE THE SAME ONE SPECIFIED FOR COPY & RENAME   00140000                                           
+          //********************************************************************* 00150000                                           
+        8 //JOURNAL  DD  DISP=SHR,DSN=DB2SYS.EUS.VCR.JRNL                         00160000                                           
+        9 //MVFIN    DD  *                                                                                                           
+ICH70001I $SCSDU1  LAST ACCESS AT 19:50:35 ON WEDNESDAY, MARCH 28, 2018                                                              
+IEF236I ALLOC. FOR EUS1RBBU STEP2                                                                                                    
+IEF237I BB04 ALLOCATED TO STEPLIB                                                                                                    
+IGD103I SMS ALLOCATED TO DDNAME                                                                                                      
+IEF237I BB05 ALLOCATED TO MVFINI                                                                                                     
+IEF237I JES2 ALLOCATED TO MVFPRINT                                                                                                   
+IGD103I SMS ALLOCATED TO DDNAME JOURNAL                                                                                              
+IEF237I JES2 ALLOCATED TO MVFIN                                                                                                      
+IGD101I SMS ALLOCATED TO DDNAME (SYSIN   )                                                                                           
+        DSN (SYS18087.T195047.RA000.EUS1RBBU.R0198584    )                                                                           
+        STORCLAS (NORMAL) MGMTCLAS (        ) DATACLAS (        )                                                                    
+        VOL SER NOS= VIO                                                                                                             
+IGD101I SMS ALLOCATED TO DDNAME (SYSPRINT)                                                                                           
+        DSN (SYS18087.T195047.RA000.EUS1RBBU.R0198585    )                                                                           
+        STORCLAS (NORMAL) MGMTCLAS (        ) DATACLAS (        )                                                                    
+        VOL SER NOS= VIO                                                                                                             
+IGD103I SMS ALLOCATED TO DDNAME SYSUT1                                                                                               
+IGD103I SMS ALLOCATED TO DDNAME SYSUT2                                                                                               
+IGD101I SMS ALLOCATED TO DDNAME (SYSUT3  )                                                                                           
+        DSN (SYS18087.T195047.RA000.EUS1RBBU.R0198586    )                                                                           
+        STORCLAS (NOVIO) MGMTCLAS (        ) DATACLAS (        )                                                                     
+        VOL SER NOS FOR DATA COMPONENT= TMPT06                                                                                       
+IGD101I SMS ALLOCATED TO DDNAME (SYSUT3  )                                                                                           
+        DSN (SYS18087.T195047.RA000.EUS1RBBU.R0198586    )                                                                           
+        STORCLAS (NOVIO) MGMTCLAS (        ) DATACLAS (        )                                                                     
+        VOL SER NOS FOR INDEX COMPONENT= TMPT06                                                                                      
+IGD101I SMS ALLOCATED TO DDNAME (SYSUT4  )                                                                                           
+        DSN (SYS18087.T195047.RA000.EUS1RBBU.R0198587    )                                                                           
+        STORCLAS (NOVIO) MGMTCLAS (        ) DATACLAS (        )                                                                     
+        VOL SER NOS FOR DATA COMPONENT= TMPT03                                                                                       
+IGD101I SMS ALLOCATED TO DDNAME (SYSUT4  )                                                                                           
+        DSN (SYS18087.T195047.RA000.EUS1RBBU.R0198587    )                                                                           
+        STORCLAS (NOVIO) MGMTCLAS (        ) DATACLAS (        )                                                                     
+        VOL SER NOS FOR INDEX COMPONENT= TMPT03                                                                                      
+IGD105I SYS18087.T195047.RA000.EUS1RBBU.R0198586     DELETED,   DDNAME=SYSUT3                                                        
+IGD105I SYS18087.T195047.RA000.EUS1RBBU.R0198587     DELETED,   DDNAME=SYSUT4                                                        
+IGD105I SYS18087.T195047.RA000.EUS1RBBU.R0198584     DELETED,   DDNAME=SYSIN                                                         
+IGD105I SYS18087.T195047.RA000.EUS1RBBU.R0198585     DELETED,   DDNAME=SYSPRINT                                                      
+IGD104I EUSSYS.EUS1.BSDS01                           RETAINED,  DDNAME=SYSUT1                                                        
+IGD104I EUSSYS.EUS1.BSDS02                           RETAINED,  DDNAME=SYSUT2                                                        
+IEF142I EUS1RBBU STEP2 - STEP WAS EXECUTED - COND CODE 0008                                                                          
+IEF285I   SYS.PROD.VCR.LOAD                            KEPT                                                                          
+IEF285I   VOL SER NOS= LNK00T.                                                                                                       
+IGD104I DB2SYS.EUS1.SSPGM                            RETAINED,  DDNAME=                                                              
+IEF285I   SYS.PROD.VCR.PARM                            KEPT                                                                          
+IEF285I   VOL SER NOS= MAS00T.                                                                                                       
+IEF285I   $SCSDU1.EUS1RBBU.J0003591.D0000102.?         SYSOUT                                                                        
+IGD104I DB2SYS.EUS.VCR.JRNL                          RETAINED,  DDNAME=JOURNAL                                                       
+IEF285I   $SCSDU1.EUS1RBBU.J0003591.D0000101.?         SYSIN                                                                         
+IEF373I STEP/STEP2   /START 2018087.1950                                                                                             
+IEF032I STEP/STEP2   /STOP  2018087.1950                                                                                             
+        CPU:     0 HR  00 MIN  00.19 SEC    SRB:     0 HR  00 MIN  00.01 SEC                                                         
+        VIRT:  1460K  SYS:   336K  EXT:     5220K  SYS:    11288K                                                                    
+        ATB- REAL:                  1148K  SLOTS:                     0K                                                             
+             VIRT- ALLOC:      18M SHRD:       0M                                                                                    
+IEF375I  JOB/EUS1RBBU/START 2018087.1950                                                                                             
+IEF033I  JOB/EUS1RBBU/STOP  2018087.1950                                                                                             
+        CPU:     0 HR  00 MIN  00.19 SEC    SRB:     0 HR  00 MIN  00.01 SEC                                                         
+VOLUME CLONE AND RENAME (C) MAINSTAR SOFTWARE CORPORATION                        28 MAR 2018 19.50.46                                
+ MVFINI INFORMATION                    MODULE INFORMATION                        OPERATING SYSTEM                                    
+     REL: V3.03                            REL: V3.03                                z/OS 2.2                                        
+    DATE: 31 JAN 2012                                                                                                                
+                                                                                                                                     
+MVF01020I PROGRAM: MVF01CIO 20110308 16.55 VERS=1.0 REV=35                                                                           
+                                                                                                                                     
+     DB2RBLDBSDS                               -                                                                                     
+       DB2-MEMBER(EUS1)                        -                                                                                     
+       ACTIVELOG-LIMIT(ALL)                    -                                                                                     
+       PRIMARY(SOURCE)                         -                                                                                     
+       DDF(SOURCE)                             -                                                                                     
+       DATA-SHARING(SOURCE)                    -                                                                                     
+       JOURNAL-DDN(JOURNAL)                                                                                                          
+                                                                                                                                     
+   MVF24001I 19.50.46 DB2RBLDBSDS STARTED - PROGRAM REV=9                                                                               
+MVF24030I OPTIONS IN EFFECT FOR THIS EXECUTION:                                                                                      
+          ACTIVELOG-LIMIT:  ALL                                                                                                      
+          CATALOG NAME:     EUSSYS                                                                                                   
+          DATA-SHARING:     SOURCE                                                                                                   
+          DB2-MEMBER:       EUS1                                                                                                     
+          DB2-NAME:                                                                                                                  
+          DDF:              SOURCE                                                                                                   
+          GROUP NAME:       DSNEUS                                                                                                   
+          PRIMARY:          SOURCE                                                                                                   
+          SIMULATION:       N                                                                                                        
+                                                                                                                                     
+    MVF24101I 19.50.47 BSDS REBUILD STARTED - PROGRAM REV=14                                                                             
+MVF24103I DDNAME=SYSIN    ALLOCATED FOR DSN=**TEMPORARY SYSIN DSN                                                                    
+MVF24103I DDNAME=SYSPRINT ALLOCATED FOR DSN=**TEMPORARY SYSPRINT DSN                                                                 
+   MVF24103I DDNAME=SYSUT1   ALLOCATED FOR DSN=EUSSYS.EUS1.BSDS01                                                                       
+MVF24103I DDNAME=SYSUT2   ALLOCATED FOR DSN=EUSSYS.EUS1.BSDS02                                                                       
+   MVF24136I DSN=EUSSYS.EUS1.BSDS01                           HAS BEEN CLEARED                                                          
+MVF24136I DSN=EUSSYS.EUS1.BSDS02                           HAS BEEN CLEARED                                                          
+                                                                                                                                     
+DSNJCNVB CONVERSION PROGRAM HAS RUN   DDNAME=SYSUT1                                                                                  
+DSNJCNVT CONVERSION PROGRAM HAS NOT RUN   DDNAME=SYSUT1                                                                              
+DSNJCNVB CONVERSION PROGRAM HAS RUN   DDNAME=SYSUT2                                                                                  
+DSNJCNVT CONVERSION PROGRAM HAS NOT RUN   DDNAME=SYSUT2                                                                              
+NEWCAT  VSAMCAT=EUSSYS                                                                                                               
+DSNJ210I  OLD VSAM CATALOG NAME=(NULL), NEW CATALOG NAME=EUSSYS                                                                      
+DSNJ225I  NEWCAT OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS01                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS01                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+DSNJ200I  DSNJU003 CHANGE LOG INVENTORY UTILITY PROCESSING COMPLETED SUCCESSFULLY                                                    
+                                                                                                                                     
+MVF24103I DDNAME=SYSUT3   ALLOCATED FOR DSN=**TEMPORARY SYSUT3 DSN
+   MVF16234W  OTKLUCHILI VODU                                                                   
+MVF24103I DDNAME=SYSUT4   ALLOCATED FOR DSN=**TEMPORARY SYSUT4 DSN                                                                   
+                                                                                                                                     
+DSNJ200I  DSNJCNVT CONVERT UTILITY PROCESSING COMPLETED SUCCESSFULLY FOR MEMBER UNKNOWN                                              
+                                                                                                                                     
+MVF24136I DSN=EUSSYS.EUS1.BSDS01                           HAS BEEN CLEARED                                                          
+MVF24136I DSN=EUSSYS.EUS1.BSDS02                           HAS BEEN CLEARED                                                          
+MVF24123I DSN=**TEMPORARY SYSUT3 DSN                       COPIED TO DSN=EUSSYS.EUS1.BSDS01                                          
+MVF24123I DSN=**TEMPORARY SYSUT4 DSN                       COPIED TO DSN=EUSSYS.EUS1.BSDS02                                          
+                                                                                                                                     
+MVF24140E DSNJU003 UTILITY EXECUTION FAILED                                                                                          
+                                                                                                                                     
+DSNJCNVT CONVERSION PROGRAM HAS RUN   DDNAME=SYSUT1                                                                                  
+DSNJCNVT CONVERSION PROGRAM HAS RUN   DDNAME=SYSUT2                                                                                  
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS02                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS03                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS04                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS05                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS06                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS07                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS08                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS09                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS10                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS11                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS12                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS13                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS14                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS15                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS16                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS17                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS18                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS19                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS20                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS21                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS22                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS23                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS24                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS25                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS26                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS27                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS28                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS29                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS30                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS31                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS32                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS33                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS34                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS35                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS36                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS37                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS38                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS39                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS40                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS41                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS42                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS43                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS44                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS45                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS46                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS47                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS48                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS49                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS50                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS51                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS52                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS53                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS54                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS55                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS56                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS57                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS58                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS59                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS60                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS61                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS62                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS63                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS64                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS65                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS66                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS67                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS68                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS69                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS70                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS71                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS72                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS73                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS74                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS75                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS76                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS77                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS78                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS79                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS80                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS81                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS82                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS83                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS84                                                                                       
+DSNJ225I  NEWLOG OPERATION COMPLETED SUCCESSFULLY                                                                                    
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS85                                                                                       
+DSNJ216I  NO SPACE IN BSDS FOR ADDITIONAL ACTIVE LOG ENTRIES, DDNAME=SYSUT1                                                          
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS86                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS87                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS88                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS89                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS90                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS91                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS92                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY1,DSNAME=EUSSYS.EUS1.LOGCOPY1.DS93                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS02                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS03                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS04                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS05                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS06                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS07                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS08                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS09                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS10                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS11                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS12                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS13                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS14                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS15                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS16                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS17                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS18                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS19                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS20                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS21                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS22                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS23                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS24                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS25                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS26                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS27                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS28                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS29                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS30                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS31                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS32                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS33                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS34                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS35                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS36                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS37                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS38                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS39                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS40                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS41                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS42                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS43                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS44                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS45                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS46                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS47                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS48                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS49                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS50                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS51                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS52                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS53                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS54                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS55                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS56                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS57                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS58                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS59                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS60                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS61                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS62                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS63                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS64                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS65                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS66                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS67                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS68                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS69                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS70                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS71                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS72                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS73                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS74                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS75                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS76                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS77                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS78                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS79                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS80                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS81                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS82                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS83                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS84                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS85                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS86                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS87                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS88                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS89                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS90                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS91                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS92                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+NEWLOG  COPY2,DSNAME=EUSSYS.EUS1.LOGCOPY2.DS93                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED NEWLOG OPERATION TO BE BYPASSED                                                                      
+DDF     LOCATION=STREUS,PORT=42611,RESPORT=42612                                                                                     
+DSNJ221I  PREVIOUS ERROR CAUSED DDF OPERATION TO BE BYPASSED                                                                         
+DDF     LUNAME=ST@EUP1                                                                                                               
+DSNJ221I  PREVIOUS ERROR CAUSED DDF OPERATION TO BE BYPASSED                                                                         
+DDF     IPNAME=DLZEUS11                                                                                                              
+DSNJ221I  PREVIOUS ERROR CAUSED DDF OPERATION TO BE BYPASSED                                                                         
+GROUP   GROUPNAM=DSNEUS,GROUPMEM=EUS1,MEMBERID=1                                                                                     
+DSNJ221I  PREVIOUS ERROR CAUSED GROUP OPERATION TO BE BYPASSED                                                                       
+DATASHR ENABLE                                                                                                                       
+DSNJ221I  PREVIOUS ERROR CAUSED DATASHR OPERATION TO BE BYPASSED                                                                     
+DSNJ201I  DSNJU003 CHANGE LOG INVENTORY UTILITY PROCESSING WAS UNSUCCESSFUL                                                          
+ MVF16345W  VKLUCHILI VODU                                                                   
+                                                                                                                                     
+MVF24101I 19.50.49 BSDS REBUILD COMPLETED; RETURN CODE=8                                                                             
+                                                                                                                                     
+MVF24001I 19.50.49 DB2RBLDBSDS COMPLETED; RETURN CODE=8                                                                              
+                                                                                                                                     
+MVF01009I VOLUME CLONE AND RENAME EXECUTION COMPLETE. HIGHEST RETURN CODE WAS 8                                                      
